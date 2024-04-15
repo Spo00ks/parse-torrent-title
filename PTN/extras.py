@@ -5,6 +5,8 @@
 delimiters = "[\.\s\-\+_\/(),]"
 
 langs = [
+    ("lat(?:ino)?", "Latino"),
+    ("cat(?:alan)?", "Catalan"),
     ("rus(?:sian)?", "Russian"),
     ("(?:True)?fre?(?:nch)?", "French"),
     ("(?:nu)?ita(?:liano?)?", "Italian"),
