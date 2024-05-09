@@ -74,7 +74,10 @@ patterns_ordered = [
     "readnfo",
     "network",
     "fps",
+    "hdr10+",
+    "hdr10",
     "hdr",
+    "dv",
     "limited",
     "remastered",
     "directorsCut",
@@ -170,6 +173,9 @@ patterns["quality"] = [
     ("DDC", "Digital Distribution Copy"),
     ("DVD-?(?:Rip|Mux)", "DVD-Rip"),
     ("DVDR|DVD-Full|Full-rip", "DVD-R"),
+    ("DVD9|DVD-Dl", "DVD-R"),
+    ("DVD5|DVD", "DVD-R"),
+    ("MPEG", "MPEG-PS"),
     ("PDTV|DVBRip", "PDTV"),
     ("DSR(?:ip)?|SATRip|DTHRip", "DSRip"),
     ("AHDTV(?:Mux)?", "AHDTV"),
@@ -179,12 +185,17 @@ patterns["quality"] = [
     ("HD-Rip", "HD-Rip"),
     ("Blu-?Ray{d}Rip|BDR(?:ip)?".format(d=delimiters), "BDRip"),
     ("Blu-?Ray|(?:US|JP)?BD(?:remux)?", "Blu-ray"),
+    ("FULLBLURAY", "Blu-ray"),
+    ("BR", "Blu-ray"),
+    ("MHD", "HDRip"),
+    ("UHD", "Blu-ray"),
     ("BR-?Rip", "BRRip"),
     ("HDDVD", "HD DVD"),
     # Match this last as it can show up with others.
     ("PPV(?:Rip)?", "Pay-Per-View Rip"),
 ]
 patterns["network"] = [
+    ("A3P", "Atres Media"),
     ("ATVP", "Apple TV+"),
     ("AMZN|Amazon", "Amazon Studios"),
     ("NF|Netflix", "Netflix"),
@@ -243,6 +254,7 @@ patterns["codec"] = [
     ("[h]{d}?263".format(d=delimiters), "H.263"),
     ("VC-1", "VC-1"),
     ("MPEG{d}?2".format(d=delimiters), "MPEG-2"),
+    ("MPEG", "MPEG"),
 ]
 patterns["audio"] = get_channel_audio_options(
     [
@@ -361,7 +373,10 @@ patterns["bitDepth"] = "(8|10)-?bits?"
 patterns["3d"] = "3D"
 patterns["internal"] = "iNTERNAL"
 patterns["readnfo"] = "READNFO"
-patterns["hdr"] = "HDR(?:10)?"
+patterns["hdr10+"] = "HDR10\\+\W"
+patterns["hdr10"] = "HDR10\W"
+patterns["hdr"] = "HDR\W"
+patterns["dv"] = "DV"
 patterns["documentary"] = "DOCU(?:menta?ry)?"
 patterns["limited"] = "LIMITED"
 patterns["remastered"] = "REMASTERED"
@@ -393,7 +408,10 @@ types = {
     "internal": "boolean",
     "readnfo": "boolean",
     "documentary": "boolean",
+    "hdr10+": "boolean",
+    "hdr10": "boolean",
     "hdr": "boolean",
+    "dv": "boolean",
     "limited": "boolean",
     "remastered": "boolean",
     "directorsCut": "boolean",
