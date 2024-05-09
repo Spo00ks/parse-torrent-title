@@ -220,6 +220,7 @@ patterns["network"] = [
     ("iP", "BBC iPlayer"),
     ("NBC", "NBC"),
     ("AMC", "AMC"),
+    ("AMC\+", "AMC+"),
     ("PBS", "PBS"),
     ("STAN", "Stan."),
     ("RTE", "RTE Player"),
